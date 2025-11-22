@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shreyash — Profile</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#f6fbff; 
+      --card:#ffffff; 
+      --accent:#0b84ff; 
+      --muted:#6b7280; 
+      --glass: rgba(255,255,255,0.6);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg, #eef7ff 0%, #ffffff 60%);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* WRAPPER */
+    .profile-wrap {
+      width: 50%;
+      max-width: 600px;
+      background: var(--card);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(12, 20, 40, 0.08);
+      display: grid;
+      grid-template-columns: 150px 1fr;
+    }
+
+    /* LEFT */
+    .left {
+      padding: 30px 20px;
+      background: linear-gradient(180deg, rgba(11,132,255,0.08), rgba(11,132,255,0.03));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--accent), #1aa0ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #fff;
+      padding: 3px;
+    }
+
+    h1.name {
+      font-size: 22px;
+      margin: 4px 0 0 0;
+      text-align: center;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .tag {
+      background: rgba(11,132,255,0.1);
+      color: var(--accent);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(11,132,255,0.18);
+    }
+
+    .btn-light {
+      background: #fff;
+      border: 1px solid #e6eefc;
+      color: var(--accent);
+    }
+
+    /* RIGHT CONTENT */
+    .right {
+      padding: 30px 35px;
+    }
+
+    .heading h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .info {
+      background: var(--glass);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    .info dl {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 10px;
+    }
+
+    dt {
+      font-weight: 700;
+      color: #111;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .skill {
+      background: #fff;
+      border: 1px solid #eef5ff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 880px) {
+      .profile-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        padding: 20px;
+      }
+
+      .right {
+        padding: 20px;
+      }
+
+      .avatar { 
+        width: 120px; 
+        height: 120px; 
+      }
+
+      .info dl {
+        grid-template-columns: 110px 1fr;
+      }
+    }
+
+    /* SMALL MOBILE */
+    @media (max-width: 480px) {
+      .avatar { width: 100px; height: 100px; }
+
+      h1.name { font-size: 18px; }
+
+      .btn { font-size: 14px; padding: 10px; }
+
+      .info dl {
+        grid-template-columns: 100px 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="profile-wrap">
+
+    <!-- LEFT PANEL -->
+    <aside class="left">
+      <div class="avatar">
+        <img src="myphoto.png" alt="Shreyash Profile Photo">
+      </div>
+
+      <h1 class="name">SHREYASH PRAKASH VAGARE</h1>
+      <p class="role">B.E. Computer Science — 5th Sem</p>
+
+      <div class="tags">
+        <span class="tag">2MM23CS066</span>
+        <span class="tag">Maratha Mandal Engg. College</span>
+      </div>
+
+      <button class="btn btn-primary" onclick="downloadResume()">Download Resume</button>
+      <button class="btn btn-light" onclick="contactMe()">Contact Me</button>
+
+      <small style="color:var(--muted);">Updated • Nov 2025</small>
+    </aside>
+
+    <!-- RIGHT PANEL -->
+    <section class="right">
+
+      <div class="heading">
+        <h2>About</h2>
+      </div>
+
+      <div class="info">
+        <dl>
+          <dt>Name:</dt><dd>SHREYASH PRAKASH VAGARE</dd>
+          <dt>USN:</dt><dd>2MM23CS066</dd>
+          <dt>Semester:</dt><dd>5th Semester</dd>
+          <dt>Course:</dt><dd>B.E. Computer Science Engineering</dd>
+          <dt>College:</dt><dd>Maratha Mandal Engineering College</dd>
+        </dl>
+      </div>
+
+      <p class="bio">
+        I am a motivated Computer Science student focused on building practical projects,
+        learning modern web technologies, and solving real-world problems.
+      </p>
+
+      <div class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">Git</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Projects</h2>
+        <ul>
+          <li>Smart Parking System — web portal with slot allocation</li>
+          <li>Mini portfolio site — responsive HTML/CSS/JS</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- JS -->
+  <script>
+    function downloadResume() {
+      const a = document.createElement('a');
+      a.href = "shreyash_resume.pdf"; 
+      a.download = "Shreyash_Vagare_Resume.pdf";
+      a.click();
+    }
+
+    function contactMe() {
+      window.location.href = 'mailto:your.email@example.com?subject=Hello%20Shreyash';
+    }
+  </script>
+
+</body>
+</html>
